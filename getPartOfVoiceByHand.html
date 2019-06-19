@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <audio id="wavFILE" controls="controls">
+        <source src="./waveFILE/AB001-1_Pt_free talk_20171026_110943_071.wav" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <br>
+    <button onclick="getCurrentTime()" type="button">Get The Time</button>
+
+    <button onclick="showTimeSeries()" type="button">Show Time Series</button>
+    <br>     
+    
+    <script>
+      var myStr = "The time series is: "
+      function getCurrentTime()
+        { 
+          myWAV=document.getElementById("wavFILE");
+          var time = myWAV.currentTime;
+          //alert(time)
+          //document.write(string(time))
+          myStr = myStr.concat(parseInt(time*1000))
+          myStr = myStr.concat(",")
+      }
+
+      function showTimeSeries()
+      {
+        document.write(myStr)
+      }
+
+
+    
+    </script> 
+    
+</body>
+</html>
